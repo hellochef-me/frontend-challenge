@@ -51,3 +51,7 @@ Feel free to add tests how you see fit.
     - Give us a UI and features walkthrough
     - Explain your code
     - Run tests, if any
+
+---
+
+> Have questions? We would love to answer. Mail us at techchallenge@hellochef.me
