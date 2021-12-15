@@ -18,7 +18,7 @@ Feel free to add tests how you see fit.
     - **Search Term:** Search for an event by its name, venue name, genre name, etc.
     - **Start Date:** Filter with a start date after this date (format e.g. 2021-12-20T17:05:00Z)
     - **End Date:** Filter with a start date before this date (format e.g. 2021-12-31T17:05:00Z)
-2. Once the user enters all the fields and hits the **Search** button, she is shown search results on the same page which is the list of all the events available for the chosen country and matching the given search term.
+2. Once the user enters all the fields and hits the **Search** button, she is shown a list of all the events available for the chosen country and matching the given search term.
 3. This list can be further filtered, sorted, and paginated as per the following points:
 4. List filters:
     - **includeTBA** boolean flag - yes, to include with date to be announce (TBA)
@@ -51,7 +51,7 @@ Feel free to use any CSS framework of your choice and create the UI as per your 
 ## API
 
 1. You can aquire an `apikey` by registering on the https://developer.ticketmaster.com/ portal.
-2. You'll find that the `Event Search` API endpoint is ideal for finding events using `keyword`, `country`, `startDateTime`, `endDateTime` parameters. You can also filter your search results by date (`startDateTime` and `endDateTime`). You may use `page` & `size` parameters to implement pagination. Sorting is also available using the `sort` keyword.
+2. You'll find that the `Event Search` API endpoint is ideal for finding events using `keyword` and `country` parameters. You can also filter your search results by date (`startDateTime` and `endDateTime`) and other parameters available in the documentation. You may use `page` & `size` parameters to implement pagination. Sorting is also available using the `sort` keyword.
 3. The `Get Event Details` API endpoint is suitable to render the **event details** page.
 
 
