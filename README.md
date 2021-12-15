@@ -2,42 +2,58 @@
 
 ## Brief
 
-Your assignment is to create a flight search web app using Skyscanner Flight Search API.
-Link: https://rapidapi.com/skyscanner/api/skyscanner-flight-search
+Your assignment is to create an event discovery web app using Ticketmaster Discovery API.
+Link: https://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/
 
-Your app should consist of two screens and it should be powered by Vue.js.
-
-Feel free to use any CSS framework of your choice and create the UI as per your liking. (Bonus points for making it mobile first & responsive.)
+Your app should consist of two screens and it should ideally be powered by Vue.js (v2 or v3, any will do).
 
 Feel free to add tests how you see fit.
 
 ## Features
 
-1. The **index page** offers these inputs:
-    - **From:** Name of the city the passenger is traveling from. It should offer an auto-suggest drop-down once two or more characters are input.
-    - **To:** Name of the city the passenger is traveling to. It should offer an auto-suggest drop-down once two or more characters are input.
-    - **Departure on or after:** This is a mandatory field. (Bonus: clicking on it should open a date picker.)
-    - **Return date:** This is an optional field. (Bonus: clicking on it should open a date picker.)
-2. Once the passenger chooses all mandatory fields and hits the **Search** button, she is taken to the listing page.
-3. The **listing page** shows the list of all the flights available for the chosen cities between today and the departure date.
-4. If a return date is specified, display both the departure and arrival flight lists together.
-5. List filters:
-    - The list can be filtered using a custom **cost filter**. You may calculate the highest and lowest cost from the data you receive at runtime.
-    - The list can be filtered by **the “Direct” boolean flag** which indicates if the flight has any stops.
-6. List sorters:
-    - Both the list(s) can be independently **sorted** in ascending and descending order by these values:
-        - Date
-        - Cost
-7. Make the cheapest flight(s) a bit visually prominent in the UI.
-8. The listing page should allow you to choose flight(s) and **display the cost of travel**, including the selected return flight, if applicable.
+### Home Page
+
+1. This page is used to search / discover events. It offers the following inputs:
+    - **Country:** A drop-down of available countries that the user can choose from. You can find the list under the "Supported Country Codes" section on Ticketmaster's developer portal.
+    - **Search Term:** Search for an event by its name, venue name, genre name, etc.
+    - **Start Date:** Filter with a start date after this date (format e.g. 2021-12-20T17:05:00Z)
+    - **End Date:** Filter with a start date before this date (format e.g. 2021-12-31T17:05:00Z)
+2. Once the user enters all the fields and hits the **Search** button, she is shown search results on the same page which is the list of all the events available for the chosen country and matching the given search term.
+3. This list can be further filtered, sorted, and paginated as per the following points:
+4. List filters:
+    - **includeTBA** boolean flag - yes, to include with date to be announce (TBA)
+    - **includeTBD** boolean flag - yes, to include with a date to be defined (TBD)
+5. List sorters:
+    - Name (ascending & descending)
+    - Date (ascending & descending)
+    - Relevance (ascending & descending)
+6. List pagination:
+    - A size drop-down with appropriate options e.g. 10, 20, 50, 100, 200
+    - Page number selections
+
+### Event Details Page
+
+1. This page shows details of any event as identified by its `id`.
+2. The following details need to be displayed on this page:
+    - Name
+    - Venue
+    - Information
+    - Images
+    - Date & time
+    - Classification (segment, genre)
+    - Price
+3. You may display any additional details you'd like using the API response.
+
+## UI
+
+Feel free to use any CSS framework of your choice and create the UI as per your liking. (Bonus points for making it mobile first & responsive.)
 
 ## API
 
-1. From the documentation, you may find that the **List Places API** endpoint is appropriate for populating cities in the auto-suggest drop-down on the first page.
-2. To find the list of flights, use the **Browse Routes API** endpoint.
-3. The **Browse Routes API** endpoint does not return the list of inbound (return) flights even if the return date is supplied. It’s up to you to figure out how to achieve this.
-4. In order to use these APIs, you need to sign up on the Rapid API platform to acquire your “X-RapidAPI-Key”.
-5. Generally, on a flight listing page, you would find flights for a specific day. In this assignment, we chose to display all the available flights between today and the given date.
+1. You can aquire an `apikey` by registering on the https://developer.ticketmaster.com/ portal.
+2. You'll find that the `Event Search` API endpoint is ideal for finding events using `keyword`, `country`, `startDateTime`, `endDateTime` parameters. You can also filter your search results by date (`startDateTime` and `endDateTime`). You may use `page` & `size` parameters to implement pagination. Sorting is also available using the `sort` keyword.
+3. The `Get Event Details` API endpoint is suitable to render the **event details** page.
+
 
 ## Submission & Presentation
 
