@@ -15,9 +15,9 @@ Feel free to add tests how you see fit.
 
 1. This page is used to search / discover events. It offers the following inputs:
     - **Country:** A drop-down of available countries that the user can choose from. You can find the list under the "Supported Country Codes" section on Ticketmaster's developer portal.
-    - **Search Term:** Search for an event by its name, venue name, genre name, etc.
-    - **Start Date:** Filter with a start date after this date (format e.g. 2021-12-20T17:05:00Z)
-    - **End Date:** Filter with a start date before this date (format e.g. 2021-12-31T17:05:00Z)
+    - **Search Term:** Search for an event by its name / venue name / genre name, etc.
+    - **Start Date:** (optional) Filter with a start date after this date (format e.g. 2021-12-20T17:05:00Z)
+    - **End Date:** (optional) Filter with a start date before this date (format e.g. 2021-12-31T17:05:00Z)
 2. Once the user enters all the fields and hits the **Search** button, she is shown a list of all the events available for the chosen country and matching the given search term.
 3. This list can be further filtered, sorted, and paginated as per the following points:
 4. List filters:
@@ -58,7 +58,7 @@ Feel free to use any CSS framework of your choice and create the UI as per your 
 ## Submission & Presentation
 
 1. Please create a public GitHub / BitBucket repository for your project.
-2. Your repository must have a detailed README.md with instructions on how to set up & run your code locally.
+2. Your repository must have a detailed `README.md` with instructions on how to set up & run your code locally.
 3. It must not contain the words “hellochef” or “challenge”.
 4. We would like you to present your work no later than 7 days from the day you receive your assignment.
 5. Accordingly, please send us the link to your repository at least 1 day prior to the presentation meeting for a review.
